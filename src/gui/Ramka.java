@@ -8,6 +8,7 @@ package gui;
 import java.awt.BorderLayout;
 import java.awt.Container;
 import java.awt.event.ItemEvent;
+import java.awt.event.KeyEvent;
 import javax.swing.*;
 
 /**
@@ -28,10 +29,16 @@ public class Ramka extends JFrame{
    
  JFrame frame = new JFrame("nowa");
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel panel = new JPanel(new BorderLayout());
         JLabel label1 = new JLabel();
-       frame.add(label1,BorderLayout.SOUTH);
-        
-        String[] sList=  new String[]{"Polisa","drukuj","zapisz"};
+        JLabel name = new JLabel("Imie");
+        name.setDisplayedMnemonic(KeyEvent.VK_0);
+        JTextField textField = new JTextField();
+        textField.setHorizontalAlignment(JTextField.CENTER);
+       frame.add(label1,BorderLayout.CENTER);
+         frame.add(name,BorderLayout.SOUTH);
+      
+        String[] sList=  new String[]{"Ford","Mercedes Benz","Volvo "};
         JComboBox<String> seasons= new JComboBox<>(sList);
         seasons.addItemListener((ItemEvent e)->{
             Object item = e.getItem();
@@ -39,7 +46,10 @@ public class Ramka extends JFrame{
             label1.setText(item+" is");
         });
         Container contentPane = frame.getContentPane();
-        contentPane.add(seasons,BorderLayout.NORTH);
+        contentPane.setBounds(100, 40, 40, 40);
+     //   contentPane.add(seasons,BorderLayout.CENTER);
+//        panel.add(name,BorderLayout.WEST);
+//        panel.add(textField,BorderLayout.CENTER);
          frame.setSize(400,400);
     frame.setVisible(true); 
     
@@ -56,6 +66,7 @@ public class Ramka extends JFrame{
        JMenuItem opcjaPolisa = new JMenuItem("Polisa");
        opcjaPolisa.addActionListener(new SluchaczMenu());
        menuPliku.add(opcjaPolisa);
+      
        
        menuPliku.addSeparator();
        
@@ -69,5 +80,6 @@ public class Ramka extends JFrame{
        frame.add(pasekMenu,BorderLayout.NORTH);
          frame.setSize(400,400);
     frame.setVisible(true); 
+    
     }
 }
