@@ -7,6 +7,7 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.KeyEvent;
 import javax.swing.*;
@@ -59,8 +60,13 @@ public class Ramka extends JFrame{
     private void menu() {
         JFrame frame = new JFrame("nowa");
     frame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        JPanel panel = new JPanel(new BorderLayout());
+        
+       Container container = frame.getContentPane();
        JMenuBar pasekMenu  = new JMenuBar();
        JMenu menuPliku = new JMenu("Plik");
+       JLabel label1 = new JLabel("imie");
+       label1.setDisplayedMnemonic(KeyEvent.VK_N);
        pasekMenu.add(menuPliku);
        
        JMenuItem opcjaPolisa = new JMenuItem("Polisa");
@@ -77,7 +83,22 @@ public class Ramka extends JFrame{
        JMenuItem opcjaZapisz = new JMenuItem("Zapisz");
        opcjaZapisz.addActionListener(new SluchaczMenu());
        menuPliku.add(opcjaZapisz);
-       frame.add(pasekMenu,BorderLayout.NORTH);
+       
+       
+       JTextField textField  = new JTextField();
+        textField.setHorizontalAlignment(JTextField.CENTER);
+       label1.setLabelFor(textField);
+      
+       
+       container.add(pasekMenu);
+       container.add(menuPliku );
+       panel.add(label1, BorderLayout.WEST);
+       panel.add(textField, BorderLayout.CENTER);
+      panel.setBounds(100, 100, 40, 40);
+  //  panel.add(label1, BorderLayout.WEST);
+    frame.add(pasekMenu,BorderLayout.NORTH);
+       frame.add(panel);
+   frame.pack();
          frame.setSize(400,400);
     frame.setVisible(true); 
     
