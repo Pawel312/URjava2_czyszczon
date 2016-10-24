@@ -36,9 +36,10 @@ public class Ramka extends JFrame {
         JMenu menuPliku = new JMenu("Plik");
         JLabel label1 = new JLabel("imie");
         JLabel label2 = new JLabel("Nazwisko");
-
+        JLabel label3 = new JLabel("Marka");
         label1.setDisplayedMnemonic(KeyEvent.VK_N);
         label1.setBounds(10, 10, 240, 240);
+        
         pasekMenu.add(menuPliku);
 
         JMenuItem opcjaPolisa = new JMenuItem("Polisa");
