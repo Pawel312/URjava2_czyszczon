@@ -9,11 +9,14 @@ import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import javax.swing.ButtonGroup;
+import javax.swing.JComboBox;
 import javax.swing.JLabel;
 import javax.swing.JMenu;
 import javax.swing.JMenuBar;
 import javax.swing.JMenuItem;
 import javax.swing.JPanel;
+import javax.swing.JRadioButton;
 import javax.swing.JTextField;
 
 /**
@@ -27,12 +30,19 @@ public class SluchaczMenu extends JPanel{
         JMenu menuPliku = new JMenu("Plik");
         JLabel label1 = new JLabel("imie");
         JLabel label2 = new JLabel("Nazwisko");
-        JLabel label3 = new JLabel("Marka");
+        JLabel label3 = new JLabel("Marka samochodu");
+        JLabel label4 = new JLabel("Tapicerka");
         
         JTextField field1 = new JTextField(10);
         JTextField field2 = new JTextField(10);
-        JTextField field3 = new JTextField(10);
+
+        String[]sList = new String[]{"Volvo","BMW"};
+        JComboBox<String> seasons  = new JComboBox<>(sList);
         
+        ButtonGroup tapicerka = new ButtonGroup();
+        JRadioButton[] material = new JRadioButton[2];
+        material[0]= new JRadioButton("skorzana");
+        material[1]= new JRadioButton("materialowa");
           setLayout(new GridBagLayout());
         GridBagConstraints gc = new GridBagConstraints();
         pasekMenu.add(menuPliku);
@@ -55,6 +65,12 @@ public class SluchaczMenu extends JPanel{
         gc.gridy = 2;
 
         add(label3, gc);
+        
+      //LABEL4      
+        gc.gridx = 0;
+        gc.gridy = 3;
+
+        add(label4, gc);
 //FIELD1
         gc.anchor = GridBagConstraints.LINE_START;
         gc.gridx = 1;
@@ -67,7 +83,8 @@ public class SluchaczMenu extends JPanel{
 //FIELD3
         gc.gridx = 1;
         gc.gridy =2;
-        add(field3,gc);
+        add(seasons,gc);
+       
 //        gc.weighty=10;
 //        gc.anchor = GridBagConstraints.FIRST_LINE_START;
 //        gc.gridx =1;
@@ -87,8 +104,9 @@ public class SluchaczMenu extends JPanel{
         JMenuItem opcjaZapisz = new JMenuItem("Zapisz");
        // opcjaZapisz.addActionListener(new SluchaczMenu());
         menuPliku.add(opcjaZapisz);
-
-
+         gc.gridx = -1;
+        gc.gridy =-2;
+        add(pasekMenu,gc);
        
     }
 
@@ -106,6 +124,8 @@ public class SluchaczMenu extends JPanel{
 //        }
 
 //    }
+
+
 }
 
 
