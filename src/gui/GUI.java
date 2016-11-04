@@ -5,6 +5,8 @@
  */
 package gui;
 
+import javax.swing.JFrame;
+
 /**
  *
  * @author student
@@ -15,7 +17,11 @@ public class GUI {
      * @param args the command line arguments
      */
     public static void main(String[] args) {
-        Ramka rama = new Ramka();        // TODO code application logic here
-    }
+        JFrame jFrame = new Ramka("kaczka1");
+        jFrame.setSize(400,500);
+        jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
+        jFrame.setVisible(true);
+	       }     // TODO code application logic here
+   
     
 }
