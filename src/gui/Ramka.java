@@ -7,11 +7,13 @@ package gui;
 
 import java.awt.BorderLayout;
 import java.awt.Container;
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.event.ActionEvent;
 import java.awt.event.ItemEvent;
 import java.awt.event.KeyEvent;
 import javax.swing.*;
+import javax.swing.border.TitledBorder;
 
 /**
  *
@@ -27,15 +29,29 @@ public class Ramka extends JFrame {
 
         setLayout(new BorderLayout());
 
+        Pasek paseek = new Pasek();
+        
+        JTextArea textArea = new JTextArea();
+        Dimension size1 = getPreferredSize();
+        Dimension size2 = getPreferredSize();
+        size1.height = 300;
+        textArea.setPreferredSize(size1);
+        size2.height=30;
+        size2.width=20;
+        paseek.setPreferredSize(size2);
         
         panel = new SluchaczMenu();
         Container container = getContentPane();
-        container.add(panel, BorderLayout.WEST);
-        
+     
+        container.add(panel, BorderLayout.CENTER);
+        container.add(textArea,BorderLayout.SOUTH);
+       container.add(paseek,BorderLayout.NORTH);
+
 // 
 //    frame.add(pasekMenu,BorderLayout.NORTH);
 //       frame.add(panel);
        
 
     }
+
 }
