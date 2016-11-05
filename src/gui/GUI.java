@@ -18,7 +18,7 @@ public class GUI {
      */
     public static void main(String[] args) {
         JFrame jFrame = new Ramka("kaczka1");
-        jFrame.setSize(400,500);
+        jFrame.setSize(400,700);
         jFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
         jFrame.setVisible(true);
 	       }     // TODO code application logic here
