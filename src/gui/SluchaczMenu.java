@@ -12,6 +12,7 @@ import java.awt.event.ActionListener;
 import javax.swing.AbstractButton;
 import javax.swing.Box;
 import javax.swing.ButtonGroup;
+import javax.swing.JButton;
 import javax.swing.JCheckBox;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
@@ -36,9 +37,10 @@ public class SluchaczMenu extends JPanel {
         JLabel label2 = new JLabel("Nazwisko: ");
         JLabel label3 = new JLabel("Marka: ");
         JLabel label4 = new JLabel("Tapicerka");
-
-        JTextField field1 = new JTextField(14);
-        JTextField field2 = new JTextField(14);
+        JButton button5 = new JButton("czyśc");
+        
+        JTextField field1 = new JTextField(10);
+        JTextField field2 = new JTextField(10);
 
         String[] sList = new String[]{"Volvo", "BMW"};
         JComboBox<String> seasons = new JComboBox<>(sList);
@@ -64,11 +66,11 @@ public class SluchaczMenu extends JPanel {
         material[1].addActionListener(slActionListener);
         
         JCheckBox jCheckBox1 = new JCheckBox("ABS");
-          JCheckBox jCheckBox2 = new JCheckBox("Klimatyzacja");
+          JCheckBox jCheckBox2 = new JCheckBox("Klima");
 //        ActionListener actionListener = new ActionListener() {
 //            @Override
 //            public void actionPerformed(ActionEvent e) {
-//                
+//             
 //            }
 //        };
 
@@ -77,19 +79,21 @@ public class SluchaczMenu extends JPanel {
         pasekMenu.add(menuPliku);
 
         gc.anchor = GridBagConstraints.LINE_END;
-        gc.weightx = 0.5;
-        gc.weighty = 0.5;
+        gc.weightx = 1.5;
+        gc.weighty = 1.5;
 //LABEL1
         gc.gridx = 0;
         gc.gridy = 0;
 
         add(label1, gc);
 //LABEL2
+
         gc.gridx = 0;
         gc.gridy = 1;
 
         add(label2, gc);
         //LABEL3       
+        
         gc.gridx = 0;
         gc.gridy = 2;
 
@@ -101,14 +105,17 @@ public class SluchaczMenu extends JPanel {
 
         add(label4, gc);
         //checkBox1
+       gc.anchor = GridBagConstraints.FIRST_LINE_START;
          gc.gridx = 0;
         gc.gridy = 4;
 
         add(jCheckBox1, gc);
-        
+       
         //checkBox2
+        gc.weighty=0.1;
+//        gc.anchor = GridBagConstraints.FIRST_LINE_START;
          gc.gridx = 1;
-        gc.gridy = 5;
+        gc.gridy = 4;
 
         add(jCheckBox2, gc);
 //FIELD1
@@ -116,25 +123,28 @@ public class SluchaczMenu extends JPanel {
         gc.gridx = 1;
         gc.gridy = 0;
         add(field1, gc);
-//FIELD3
+//FIELD2
+gc.anchor = GridBagConstraints.LINE_START;
         gc.gridx = 1;
         gc.gridy = 1;
         add(field2, gc);
 //FIELD3
+gc.anchor = GridBagConstraints.LINE_START;
         gc.gridx = 1;
         gc.gridy = 2;
         add(seasons, gc);
         
         //FIELD4
+        
         gc.gridx = 1;
         gc.gridy = 3;
         add(b1, gc);
-
-//        gc.weighty=10;
-//        gc.anchor = GridBagConstraints.FIRST_LINE_START;
-//        gc.gridx =1;
-//        gc.gridy = 2;
-//        add(addButton,gc);
+//button eta clear
+        gc.weighty=10;
+        gc.anchor = GridBagConstraints.FIRST_LINE_END;
+        gc.gridx =1;
+        gc.gridy = 6;
+        add(button5,gc);
         JMenuItem opcjaPolisa = new JMenuItem("Polisa");
         // opcjaPolisa.addActionListener(new SluchaczMenu());
         menuPliku.add(opcjaPolisa);
@@ -148,8 +158,8 @@ public class SluchaczMenu extends JPanel {
         JMenuItem opcjaZapisz = new JMenuItem("Zapisz");
         // opcjaZapisz.addActionListener(new SluchaczMenu());
         menuPliku.add(opcjaZapisz);
-        gc.gridx = -1;
-        gc.gridy = -2;
+        gc.gridx = 4;
+        gc.gridy = 4;
         add(pasekMenu, gc);
 
     }
