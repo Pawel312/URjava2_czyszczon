@@ -5,11 +5,13 @@
  */
 package gui;
 
+import java.awt.Dimension;
 import java.awt.GridBagConstraints;
 import java.awt.GridBagLayout;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import javax.swing.AbstractButton;
+import javax.swing.BorderFactory;
 import javax.swing.Box;
 import javax.swing.ButtonGroup;
 import javax.swing.JButton;
@@ -22,29 +24,34 @@ import javax.swing.JMenuItem;
 import javax.swing.JPanel;
 import javax.swing.JRadioButton;
 import javax.swing.JTextField;
+import javax.swing.border.Border;
+import javax.swing.plaf.metal.MetalBorders;
 
-/**
- *
- * @author student
- */
+
 public class SluchaczMenu extends JPanel {
-
+ JLabel label1 = new JLabel("imie: ");
     public SluchaczMenu() {
-        JMenuBar pasekMenu = new JMenuBar();
-        JMenu menuPliku = new JMenu("Plik");
+        Dimension size = getPreferredSize();
+        size.width = 380;
+        size.height = 300;
+        setPreferredSize(size);
+        Pasek paseek = new Pasek();
+        setBorder(BorderFactory.createTitledBorder("dane"));
+
         JLabel label = new JLabel();
-        JLabel label1 = new JLabel("imie: ");
+       
         JLabel label2 = new JLabel("Nazwisko: ");
         JLabel label3 = new JLabel("Marka: ");
         JLabel label4 = new JLabel("Tapicerka");
-        JButton button5 = new JButton("czyśc");
-        
+        JButton button5 = new JButton("czyść");
+      
         JTextField field1 = new JTextField(10);
         JTextField field2 = new JTextField(10);
 
         String[] sList = new String[]{"Volvo", "BMW"};
         JComboBox<String> seasons = new JComboBox<>(sList);
-
+  
+        
         ButtonGroup tapicerka = new ButtonGroup();
         JRadioButton[] material = new JRadioButton[2];
         material[0] = new JRadioButton("skorzana");
@@ -67,16 +74,21 @@ public class SluchaczMenu extends JPanel {
         
         JCheckBox jCheckBox1 = new JCheckBox("ABS");
           JCheckBox jCheckBox2 = new JCheckBox("Klima");
-//        ActionListener actionListener = new ActionListener() {
-//            @Override
-//            public void actionPerformed(ActionEvent e) {
-//             
-//            }
-//        };
+button5.addActionListener(new ActionListener() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+               field1.setText(null);
+               field2.setText(null);
+               jCheckBox1.setSelected(false);
+               jCheckBox2.setSelected(false);
+               b1.
+               
+            }
+        });
 
         setLayout(new GridBagLayout());
         GridBagConstraints gc = new GridBagConstraints();
-        pasekMenu.add(menuPliku);
+        
 
         gc.anchor = GridBagConstraints.LINE_END;
         gc.weightx = 1.5;
@@ -133,8 +145,10 @@ gc.anchor = GridBagConstraints.LINE_START;
         gc.gridx = 1;
         gc.gridy = 2;
         add(seasons, gc);
-        
+ 
         //FIELD4
+        
+        
         
         gc.gridx = 1;
         gc.gridy = 3;
@@ -142,39 +156,13 @@ gc.anchor = GridBagConstraints.LINE_START;
 //button eta clear
         gc.weighty=10;
         gc.anchor = GridBagConstraints.FIRST_LINE_END;
-        gc.gridx =1;
+        gc.gridx =0;
         gc.gridy = 6;
         add(button5,gc);
-        JMenuItem opcjaPolisa = new JMenuItem("Polisa");
-        // opcjaPolisa.addActionListener(new SluchaczMenu());
-        menuPliku.add(opcjaPolisa);
-
-        menuPliku.addSeparator();
-
-        JMenuItem opcjaDrukuj = new JMenuItem("Drukuj");
-        //  opcjaDrukuj.addActionListener(new SluchaczMenu());
-        menuPliku.add(opcjaDrukuj);
-
-        JMenuItem opcjaZapisz = new JMenuItem("Zapisz");
-        // opcjaZapisz.addActionListener(new SluchaczMenu());
-        menuPliku.add(opcjaZapisz);
-        gc.gridx = 4;
-        gc.gridy = 4;
-        add(pasekMenu, gc);
+        
+        
+        
 
     }
-
-//    public void actionPerformed(ActionEvent e) {
-//        String wybrano = e.getActionCommand();
-//        if (wybrano.equals("Polisa")) {
-//            System.out.println("polisa");
-//        } else if (wybrano.equals("Drukuj")) {
-//            System.out.println("polisa");
-//        } else if (wybrano.equals("Zapisz")) {
-//            System.out.println("zapisanoj");}
-//            else{
-//                    System.exit(0);
-//              //ggg
-//        }
-//    }
+    
 }
