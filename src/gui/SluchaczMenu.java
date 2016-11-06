@@ -83,6 +83,7 @@ public class SluchaczMenu extends JPanel {
             @Override
             public void actionPerformed(ActionEvent e) {
                 String car = "";
+                String mater= "";
                 String klima= "" ;
                 String abs = "";
                 String name = field1.getText();
@@ -97,7 +98,13 @@ public class SluchaczMenu extends JPanel {
                 if(seasons.getSelectedIndex()==i){
                     car = sList[i];
                             }
-                String text = name+" "+surname+" "+car+" "+abs+" " +klima;
+                if(material[0].isSelected()){
+                    mater=("skórzana");
+                }
+                else{
+                    mater=("matriałowa");
+                }
+                String text = name+" "+surname+" ma samochód "+car+" z  "+abs+" oraz " +klima+" i " + mater +" tapicerkę\n";
                 field1.setText(null);
                 field2.setText(null);
                 jCheckBox1.setSelected(false);
