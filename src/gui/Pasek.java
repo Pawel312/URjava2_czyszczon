@@ -34,12 +34,8 @@ public class Pasek extends JMenu {
         menuPliku.add(opcjaDrukuj);
 
         JMenuItem opcjaZapisz = new JMenuItem("Zapisz");
-        opcjaZapisz.addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent e) {
-               
-            }
-        });
+
+          
         menuPliku.add(opcjaZapisz);
         pasekMenu.add(menuPliku);
 
@@ -50,4 +46,5 @@ public class Pasek extends JMenu {
         gc.gridy = 0;
         add(pasekMenu, gc);
     }
+   
 }
