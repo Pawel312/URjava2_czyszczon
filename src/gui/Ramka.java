@@ -54,10 +54,7 @@ public class Ramka extends JFrame {
         container.add(textArea,BorderLayout.SOUTH);
        container.add(paseek,BorderLayout.NORTH);
 
-// 
-//    frame.add(pasekMenu,BorderLayout.NORTH);
-//       frame.add(panel);
-       
+
 
     }
     

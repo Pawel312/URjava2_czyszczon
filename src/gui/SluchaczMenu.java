@@ -1,8 +1,4 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
+
 package gui;
 
 import java.awt.Dimension;
@@ -152,7 +148,6 @@ public class SluchaczMenu extends JPanel {
 
         //checkBox2
         gc.weighty = 0.1;
-//        gc.anchor = GridBagConstraints.FIRST_LINE_START;
         gc.gridx = 1;
         gc.gridy = 4;
 
